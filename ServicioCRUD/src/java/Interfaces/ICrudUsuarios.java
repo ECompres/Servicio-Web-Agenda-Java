@@ -15,7 +15,7 @@ import java.util.List;
 public interface ICrudUsuarios {
     public List listarUsuarios();
     public Usuarios listarID(int id);
-    public String add(String NOMBRES, String APELLIDOS, String EMAIL, String PASSWORD);
-    public String edit(int ID, String NOMBRES, String APELLIDOS, String EMAIL, String PASSWORD);
+    public String add(String NOMBRES, String APELLIDOS, String EMAIL, String PASSWORD, int TIPO_USUARIO);
+    public String edit(int ID, String NOMBRES, String APELLIDOS, String EMAIL, String PASSWORD, int TIPO_USUARIO);
     public Usuarios delete(int id);
 }

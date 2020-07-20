@@ -15,16 +15,18 @@ public class Usuarios {
     String APELLIDOS;
     String EMAIL;
     String PASSWORD;
+    int TIPO_USUARIO;
 
     public Usuarios() {
     }
 
-    public Usuarios(int ID, String NOMBRES, String APELLIDOS, String EMAIL, String PASSWORD) {
+    public Usuarios(int ID, String NOMBRES, String APELLIDOS, String EMAIL, String PASSWORD, int TIPO_USUARIO) {
         this.ID = ID;
         this.NOMBRES = NOMBRES;
         this.APELLIDOS = APELLIDOS;
         this.EMAIL = EMAIL;
         this.PASSWORD = PASSWORD;
+        this.TIPO_USUARIO = TIPO_USUARIO;
     }
 
     public int getID() {
@@ -66,5 +68,14 @@ public class Usuarios {
     public void setPASSWORD(String PASSWORD) {
         this.PASSWORD = PASSWORD;
     }
+
+    public int getTIPO_USUARIO() {
+        return TIPO_USUARIO;
+    }
+
+    public void setTIPO_USUARIO(int TIPO_USUARIO) {
+        this.TIPO_USUARIO = TIPO_USUARIO;
+    }
+    
     
 }

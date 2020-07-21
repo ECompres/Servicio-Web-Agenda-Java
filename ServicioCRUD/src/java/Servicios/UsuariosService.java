@@ -39,15 +39,6 @@ public class UsuariosService {
     /**
      * Web service operation
      */
-    @WebMethod(operationName = "listarID")
-    public Usuarios listarID(@WebParam(name = "ID") int ID) {
-        Usuarios user = dao.listarID(ID);
-        return user;
-    }
-
-    /**
-     * Web service operation
-     */
     @WebMethod(operationName = "actualizar")
     public String actualizar(@WebParam(name = "ID") int ID, @WebParam(name = "NOMBRES") String NOMBRES, @WebParam(name = "APELLIDOS") String APELLIDOS, @WebParam(name = "EMAIL") String EMAIL, @WebParam(name = "PASSWORD") String PASSWORD, @WebParam(name = "TIPO_USUARIO") int TIPO_USUARIO) {
         String datos = dao.edit(ID, NOMBRES, APELLIDOS, EMAIL, PASSWORD, TIPO_USUARIO);
@@ -62,4 +53,22 @@ public class UsuariosService {
         Usuarios user = dao.delete(ID);
         return user;
     }
+
+    @WebMethod(operationName = "logIn")
+    public Usuarios logIn(@WebParam(name = "EMAIL") String EMAIL, @WebParam(name = "PASSWORD") String PASSWORD) {
+        Usuarios user = dao.logIn(EMAIL, PASSWORD);
+
+        return user;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "listarID")
+    public Usuarios listarID(@WebParam(name = "ID") int ID) {
+        Usuarios user = dao.listarID(ID);
+        return user;
+    }
+
+
 }

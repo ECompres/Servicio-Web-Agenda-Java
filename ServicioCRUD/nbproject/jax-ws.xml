@@ -4,6 +4,9 @@
     <service name="UsuariosService">
       <implementation-class>Servicios.UsuariosService</implementation-class>
     </service>
+    <service name="ContactosService">
+      <implementation-class>Servicios.ContactosService</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>

@@ -18,4 +18,5 @@ public interface ICrudUsuarios {
     public String add(String NOMBRES, String APELLIDOS, String EMAIL, String PASSWORD, int TIPO_USUARIO);
     public String edit(int ID, String NOMBRES, String APELLIDOS, String EMAIL, String PASSWORD, int TIPO_USUARIO);
     public Usuarios delete(int id);
+    public Usuarios logIn(String EMAIL, String PASSWORD);
 }

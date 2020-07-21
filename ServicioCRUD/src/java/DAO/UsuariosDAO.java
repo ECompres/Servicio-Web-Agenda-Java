@@ -124,8 +124,34 @@ public class UsuariosDAO implements ICrudUsuarios {
         try {
             con = cn.getConnection();
             pst = con.prepareStatement(sql);
-             pst.executeUpdate(sql);
-           
+            pst.executeUpdate(sql);
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+        }
+        return user;
+    }
+
+    @Override
+    public Usuarios logIn(String EMAIL, String PASSWORD) {
+        Usuarios user = new Usuarios();
+        try {
+            con = cn.getConnection();
+            String sql = "select ID,NOMBRES,APELLIDOS,EMAIL,PASSWORD,TIPO_USUARIO from usuarios where EMAIL=? and PASSWORD=?";
+            pst = con.prepareStatement(sql);
+            pst.setString(1, EMAIL);
+            pst.setString(2, PASSWORD);
+
+            rs = pst.executeQuery();
+            while (rs.next()) {
+                user.setID(rs.getInt("ID"));
+                user.setNOMBRES(rs.getString("NOMBRES"));
+                user.setAPELLIDOS(rs.getString("APELLIDOS"));
+                user.setEMAIL(rs.getString("EMAIL"));
+                user.setPASSWORD(rs.getString("PASSWORD"));
+                user.setTIPO_USUARIO(rs.getInt("TIPO_USUARIO"));
+                return user;
+            }
         } catch (Exception e) {
             System.out.println("Error: " + e);
         }

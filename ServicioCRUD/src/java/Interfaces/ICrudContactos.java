@@ -15,7 +15,7 @@ import java.util.List;
 public interface ICrudContactos {
     
     public List listarContactos(int id);
-    public Contactos listarID(int id);
+    public Contactos listarContactoID(int id);
     public String add(int ID_USUARIO, String NOMBRES, String APELLIDOS, String EMAIL, String DIRECCION);
     public String edit(int ID, int ID_USUARIO, String NOMBRES, String APELLIDOS, String EMAIL, String DIRECCION);
     public Contactos delete(int id);

@@ -50,7 +50,7 @@ public class ContactosDAO implements ICrudContactos {
     }
 
     @Override
-    public Contactos listarID(int id) {
+    public Contactos listarContactoID(int id) {
         String sql = "select * from contactos where id =" + id;
         Contactos contacto = new Contactos();
         try {

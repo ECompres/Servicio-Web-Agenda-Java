@@ -63,9 +63,9 @@ public class ContactosService {
     /**
      * Web service operation
      */
-    @WebMethod(operationName = "listarID")
-    public Contactos listarID(@WebParam(name = "ID") int ID) {
-        Contactos contact = dao.listarID(ID);
+    @WebMethod(operationName = "listarContactoID")
+    public Contactos listarContactoID(@WebParam(name = "ID") int ID) {
+        Contactos contact = dao.listarContactoID(ID);
         
         return contact;
     }
